@@ -46,10 +46,55 @@ message.innerHTML =
 header.append(message);
 // header.append(message.cloneNode(true));
 
-// Delelte
+// Delelte Element
 document
   .querySelector('.btn--close-cookie')
   .addEventListener('click', function () {
     // message.remove();
     message.parentElement.removeChild(message);
   });
+
+// Styles
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+console.log(message.style.color);
+console.log(message.style.backgroundColor);
+
+console.log(getComputedStyle(message).color);
+console.log(getComputedStyle(message).height);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 40 + 'px';
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+// Attribute
+
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+console.log(logo.src);
+console.log(logo.className);
+
+logo.alt = 'Beautiful minimalist logo';
+
+// Non-standard
+console.log(logo.designer);
+console.log(logo.getAttribute('designer'));
+logo.setAttribute('Company', 'Bankisg');
+
+console.log(logo.src);
+console.log(logo.getAttribute('src'));
+
+const link = document.querySelector('.twitter-link');
+console.log(logo.href);
+console.log(logo.getAttribute('href'));
+
+// Data attrubute
+console.log(logo.dataset.versionNmuber);
+
+// Classes
+logo.classList.add('c', 'j');
+logo.classList.remove('c', 'j');
+logo.classList.toogle('c');
+logo.classList.contains('c');
