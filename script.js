@@ -55,46 +55,80 @@ document
   });
 
 // Styles
-message.style.backgroundColor = '#37383d';
-message.style.width = '120%';
+// message.style.backgroundColor = '#37383d';
+// message.style.width = '120%';
 
-console.log(message.style.color);
-console.log(message.style.backgroundColor);
+// console.log(message.style.color);
+// console.log(message.style.backgroundColor);
 
-console.log(getComputedStyle(message).color);
-console.log(getComputedStyle(message).height);
+// console.log(getComputedStyle(message).color);
+// console.log(getComputedStyle(message).height);
 
-message.style.height =
-  Number.parseFloat(getComputedStyle(message).height, 10) + 40 + 'px';
+// message.style.height =
+//   Number.parseFloat(getComputedStyle(message).height, 10) + 40 + 'px';
 
-document.documentElement.style.setProperty('--color-primary', 'orangered');
+// document.documentElement.style.setProperty('--color-primary', 'orangered');
 
 // Attribute
 
-const logo = document.querySelector('.nav__logo');
-console.log(logo.alt);
-console.log(logo.src);
-console.log(logo.className);
+// const logo = document.querySelector('.nav__logo');
+// console.log(logo.alt);
+// console.log(logo.src);
+// console.log(logo.className);
 
-logo.alt = 'Beautiful minimalist logo';
+// logo.alt = 'Beautiful minimalist logo';
 
-// Non-standard
-console.log(logo.designer);
-console.log(logo.getAttribute('designer'));
-logo.setAttribute('Company', 'Bankisg');
+// // Non-standard
+// console.log(logo.designer);
+// console.log(logo.getAttribute('designer'));
+// logo.setAttribute('Company', 'Bankisg');
 
-console.log(logo.src);
-console.log(logo.getAttribute('src'));
+// console.log(logo.src);
+// console.log(logo.getAttribute('src'));
 
-const link = document.querySelector('.twitter-link');
-console.log(logo.href);
-console.log(logo.getAttribute('href'));
+// const link = document.querySelector('.twitter-link');
+// console.log(logo.href);
+// console.log(logo.getAttribute('href'));
 
 // Data attrubute
-console.log(logo.dataset.versionNmuber);
+// console.log(logo.dataset.versionNmuber);
 
-// Classes
-logo.classList.add('c', 'j');
-logo.classList.remove('c', 'j');
-logo.classList.toogle('c');
-logo.classList.contains('c');
+// // Classes
+// logo.classList.add('c', 'j');
+// logo.classList.remove('c', 'j');
+// logo.classList.toogle('c');
+// logo.classList.contains('c');
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function (e) {
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  console.log(e.target.getBoundingClientRect());
+
+  console.log('Current scroll X/Y', window.pageXOffset, window.pageYOffset);
+
+  console.log(
+    'height/widith viewport',
+    document.documentElement.clientHeight,
+    document.documentElement.clientWidth
+  );
+
+  // Scrolling
+  // window.scrollTo(
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
+
+  ////////////
+
+  // window.scrollTo({
+  //   left: s1coords.left + window.pageXOffset,
+  //   top: s1coords.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
