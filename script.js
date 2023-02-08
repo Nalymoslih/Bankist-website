@@ -139,3 +139,15 @@ const alertH1 = function (e) {
 };
 h1.addEventListener('mouseenter', alertH1);
 setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
+
+// Random RGBA
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + max);
+const randomColor = () =>
+  `rgba(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
+// console.log(randomColor(0, 255));
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  // console.log('link');
+});
