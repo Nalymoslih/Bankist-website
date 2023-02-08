@@ -142,7 +142,7 @@ setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
 
 // Random RGBA
 const randomInt = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + max);
+  Math.floor(Math.random() * (max - min + 1) + min);
 const randomColor = () =>
   `rgba(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
 // console.log(randomColor(0, 255));
@@ -150,6 +150,11 @@ const randomColor = () =>
 document.querySelector('.nav__link').addEventListener('click', function (e) {
   this.style.backgroundColor = randomColor();
   // console.log('link');
+  console.log('LINK', e.target, e.currentTarget);
+  console.log(e.currentTarget === true);
+
+  // Stop propagition && is bad ideo
+  e.stopPropagation();
 });
 
 document.querySelector('.nav__links').addEventListener('click', function (e) {
