@@ -32,18 +32,18 @@ document.addEventListener('keydown', function (e) {
 });
 
 btnScrollTo.addEventListener('click', function (e) {
-  const s1coords = section1.getBoundingClientRect();
-  console.log(s1coords);
+  // const s1coords = section1.getBoundingClientRect();
+  // console.log(s1coords);
 
-  console.log(e.target.getBoundingClientRect());
+  // console.log(e.target.getBoundingClientRect());
 
-  console.log('Current scroll X/Y', window.pageXOffset, window.pageYOffset);
+  // console.log('Current scroll X/Y', window.pageXOffset, window.pageYOffset);
 
-  console.log(
-    'height/widith viewport',
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
+  // console.log(
+  //   'height/widith viewport',
+  //   document.documentElement.clientHeight,
+  //   document.documentElement.clientWidth
+  // );
 
   // Scrolling
   // window.scrollTo(
@@ -66,7 +66,9 @@ btnScrollTo.addEventListener('click', function (e) {
 document.querySelectorAll('.nav__link').forEach(function (el) {
   el.addEventListener('click', function (e) {
     e.preventDefault();
-    console.log('Link');
+    const id = this.getAttribute('href');
+    console.log(id);
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
   });
 });
 
