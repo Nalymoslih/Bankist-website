@@ -186,3 +186,32 @@ setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
 //   this.style.backgroundColor = randomColor();
 //   // console.log('NAV', e.target, e.currentTarget);
 // });
+
+// DOM trversing
+const H1 = document.querySelector('h1');
+
+// Going downwards: child
+console.log(H1.querySelectorAll('.highlight'));
+console.log(H1.childNodes);
+console.log(H1.children);
+H1.firstElementChild.style.color = 'white';
+H1.lastElementChild.style.color = 'orangered';
+
+// Going upwards: parents
+console.log(H1.parentNode);
+console.log(H1.parentElement);
+
+H1.closest('.header').style.background = 'var(--gradient-secondary)';
+
+H1.closest('h1').style.background = 'var(--gradient-primary)';
+
+// Going sideways: sibilings
+console.log(H1.previousElementSibling);
+console.log(H1.nextElementSibling);
+
+console.log(H1.previousSibling);
+console.log(H1.nextSibling);
+
+[...h1.parentElement.children].forEach(function (el) {
+  if (el != h1) el.style.transform = 'scale(0.5)';
+});
