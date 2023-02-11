@@ -96,9 +96,7 @@ tabsContainer.addEventListener('click', function (e) {
   // Guard clause
   if (!clicked) return;
 
-  if (clicked) {
-    clicked.classList.add('operations__tab--active');
-  }
+  clicked.classList.add('operations__tab--active');
 });
 
 // Bad Practice
