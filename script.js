@@ -89,6 +89,11 @@ const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operation__content');
 
+tabsContainer.addEventListener('click', function (e) {
+  const clicked = e.target.parentElement;
+  console.log(clicked);
+});
+
 // Bad Practice
 // tabs.forEach(t => t.addEventListener('click', () => console.log('TAB')));
 
