@@ -90,7 +90,7 @@ const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operation__content');
 
 tabsContainer.addEventListener('click', function (e) {
-  const clicked = e.target.parentElement;
+  const clicked = e.target.closest('.operations__tab');
   console.log(clicked);
 });
 
